@@ -1,4 +1,4 @@
 {
-    "api_key":"PUT YOUR API KEY HERE",
+    "api_key":"api key here",
     "model":"gemini-1.5-flash"
 }
