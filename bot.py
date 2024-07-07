@@ -13,9 +13,12 @@ class client(discord.Client):
         if message.author.bot or message.channel.type != discord.ChannelType.private:
             return
         print(f'Message from {message.author}: {message.content}')
+        response = gemini.generate(message.content)
+        await message.channel.send(response)
 
 intents = discord.Intents.default()
 intents.message_content = True
+intents.dm_messages = True
 
 client = client(intents=intents)
 client.run(token)
